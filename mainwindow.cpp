@@ -56,7 +56,7 @@ void MainWindow::ProgramInit()
   commandLabel->setVisible(false);
   commandLabel->setText(commText);
   //Initialize the settings file for this user
-  settings = new QSettings("PCBSD", "qsudo");
+  settings = new QSettings("TrueOS", "qsudo");
   //if(!settings->contains("qsudosamplevalue")){ settings->setValue("qsudosamplevalue","-1"); }
   //qDebug() << "Settings File:" << settings->fileName() << commText;
   //Check that there is not a dialog already open for this command
