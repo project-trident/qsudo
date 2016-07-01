@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include "mainwindow.h"
-#include "../config.h"
+#define PREFIX QString("/usr/local")
 
 int main(int argc, char *argv[])
 {   

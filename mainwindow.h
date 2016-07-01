@@ -6,7 +6,7 @@
 #include <QSettings>
 #include <QDesktopWidget>
 #include <QPoint>
-#include "../config.h"
+#define PREFIX QString("/usr/local")
 
 class MainWindow : public QMainWindow, private Ui::MainWindow
 {

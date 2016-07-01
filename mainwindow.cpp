@@ -21,7 +21,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include "mainwindow.h"
-#include "../config.h"
 
 void MainWindow::ProgramInit()
 {
