@@ -1,4 +1,3 @@
-# Created by: Kris Moore <kris@ixsystems.com>
 # $FreeBSD$
 
 PORTNAME=	qsudo
@@ -9,6 +8,8 @@ MAINTAINER=	kris@ixsystems.com
 COMMENT=	Qt sudo front-end
 
 LICENSE=	BSD2CLAUSE
+
+RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
 
 MAKE_ARGS=      PREFIX=${STAGEDIR}${PREFIX}
 
