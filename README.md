@@ -1,5 +1,7 @@
 # qsudo
 
+**General Table of Contents**
+
 - [General TrueOS Information](#generalinfo)
 	- [TrueOS Project Documentation](#all-docs)
 		- [TrueOS Handbook](#trueos-docs)
@@ -14,45 +16,6 @@
 	- [Social Media](#trueos-social)
 
 <!-- END GENERAL INFO TOC -->
-
-# SysAdm Qt Client
-
-Official repo for TrueOS' sysadm WebSocket Client
-
-This multi-platform client is designed to work with [TrueOS' sysadm server](https://github.com/trueos/sysadm) <br />
-for administration of Free/TrueOS systems
-
-### Required Qt Modules
-
-```
-Qt5 Core (pkg install qt5-core)
-Qt5 Gui (pkg install qt5-gui)
-Qt5 Concurrent (pkg install qt5-concurrent)
-Qt5 Websockets (pkg install qt5-websockets)
-```
-
-### Building SysAdm Qt Client
-
-```
-% git clone https://github.com/trueos/sysadm-ui-qt.git
-% cd sysadm/src-qt5
-% /usr/local/lib/qt5/bin/qmake -recursive
-% make && sudo make install
-```
-
-### Starting SysAdm Client
-
-```
-(For GUI interface)
-% gui_client/sysadm-client
-
-(For CLI interface)
-% cli_client/sysadm-client
-```
-
-### Websockets API Documentation
-
-https://api.pcbsd.org
 
 # General TrueOS Information
 
@@ -93,12 +56,16 @@ The Server handbook is a basic installation guide, walking new users through the
 
 Due to the number of repositories under the TrueOS "umbrella", the TrueOS Project consolidates its issue trackers into a few repositories:
 
-* [trueos-core](https://github.com/trueos/trueos-core) : Used for general TrueOS issues, Pico issues, feature  requests, and TrueOS website issues.
+* [trueos-core](https://github.com/trueos/trueos-core) : Used for general TrueOS issues, Pico issues, and feature  requests.
 * [lumina](https://github.com/trueos/lumina) : Issues related to using the Lumina Desktop Environment.
 * (Coming Soon) [sysadm](https://github.com/trueos/sysadm) : Issues with using the SysAdm client or server.
 * [trueos-docs](https://github.com/trueos/trueos-docs) : Issues related to the TrueOS Handbook.
 * [lumina-docs](https://github.com/trueos/lumina-docs) : Issues related to the Lumina Handbook.
 * [sysadm-docs](https://github.com/trueos/sysadm-docs) : Issues related to the SysAdm API Guide, Client, and Server Handbooks.
+* [trueos-website](https://github.com/trueos/trueos-website) : Issues involving any of the TrueOS Project websites: 
+  - https://www.lumina-desktop.org
+  - https://www.trueos.org
+  - https://www.sysadm.us
 
 The TrueOS handbook has detailed instructions to help you report a bug (https://www.trueos.org/handbook/helpsupport.html#report-a-bug). It is recommended to refer to these instructions when creating new GitHub issues. Better bug reports usually result in faster fixes!
 
@@ -139,3 +106,4 @@ The TrueOS Project also maintains a number of social media accounts you can watc
 * Linkedin: http://www.linkedin.com/groups?gid=1942544
 * TrueOS Blog: https://www.trueos.org/blog/
 * Twitter: https://twitter.com/TrueOS_Project/
+
