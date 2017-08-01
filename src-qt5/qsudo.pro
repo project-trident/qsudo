@@ -37,6 +37,7 @@ TRANSLATIONS =  i18n/qsudo_af.ts \
                 i18n/qsudo_el.ts \
                 i18n/qsudo_es.ts \
                 i18n/qsudo_en_GB.ts \
+                i18n/qsudo_en_AU.ts \
                 i18n/qsudo_en_ZA.ts \
                 i18n/qsudo_et.ts \
                 i18n/qsudo_eu.ts \
