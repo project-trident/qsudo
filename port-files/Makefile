@@ -4,7 +4,7 @@ PORTNAME=	qsudo
 PORTVERSION=	%%CHGVERSION%%
 CATEGORIES=	sysutils
 
-MAINTAINER=	kris@ixsystems.com
+MAINTAINER=	jt@ixsystems.com
 COMMENT=	Qt sudo front-end
 
 LICENSE=	BSD2CLAUSE
