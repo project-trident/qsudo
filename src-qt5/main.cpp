@@ -13,13 +13,17 @@
 #endif
 
 int main(int argc, char *argv[])
-{   
+{
     QApplication a(argc, argv);
 
     if ( argc <= 1 ) {
        qDebug() << "Error: Need to specify argument to run!";
        exit(1);
     }
+    //Test that the user needs to provide a password first
+    QStringList args; for(int i=1; i<argc; i++){ args << argv[i]; }
+    int ret = QProcess::execute("sudo", QStringList() << "-n" << "-b" << "-S"  << args);
+    if(ret==0){ return 0; } //all finished. No password needed
 
     QTranslator translator;
     QLocale mylocale;
@@ -32,7 +36,7 @@ int main(int argc, char *argv[])
       a.installTranslator( &translator );
     }
     QTextCodec::setCodecForLocale( QTextCodec::codecForName("UTF-8") ); //Force Utf-8 compliance
-    
+
     MainWindow w;
     w.ProgramInit();
     w.show();

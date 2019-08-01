@@ -148,13 +148,13 @@ void MainWindow::startSudo()
 
 void MainWindow::slotPrintStdErr()
 {
-  QTextStream cout(stderr); 
+  QTextStream cout(stderr);
   cout << sudoProc->readAllStandardError();
 }
 
 void MainWindow::slotPrintStdOut()
 {
-  QTextStream cout(stdout); 
+  QTextStream cout(stdout);
   cout << sudoProc->readAllStandardOutput();
 }
 
@@ -183,7 +183,7 @@ void MainWindow::slotButtonClicked(QAbstractButton *myBut)
   }else{
     QApplication::exit(1);
   }
-  
+
 }
 
 bool MainWindow::checkUserGroup()
@@ -193,18 +193,18 @@ bool MainWindow::checkUserGroup()
    QStringList gNames;
    if ( loginName == "root" )
      return true;
-   
+
    QStringList info = runQuickCmd("getent group").filter(groupName); //need to support AD/LDAP settings
    /*QString tmp;
    QFile iFile("/etc/group");
    if ( ! iFile.open(QIODevice::ReadOnly | QIODevice::Text))
      return true; //or FALSE?*/
- 
+
    for(int i=0; i<info.length(); i++){
      if(info[i].section(":",0,0)==groupName){
        gNames = info[i].section(":",3,3).split(",");
        break;
-     }	     
+     }
    }
    /*while ( !iFile.atEnd() ) {
      tmp = iFile.readLine().simplified();
@@ -227,18 +227,18 @@ bool MainWindow::checkUserGroup()
 }
 
 QStringList MainWindow::runQuickCmd(QString cmd){
-   QProcess p;  
+   QProcess p;
    //Make sure we use the system environment to properly read system variables, etc.
    p.setProcessEnvironment(QProcessEnvironment::systemEnvironment());
    //Merge the output channels to retrieve all output possible
-   p.setProcessChannelMode(QProcess::MergedChannels);   
+   p.setProcessChannelMode(QProcess::MergedChannels);
    p.start(cmd);
    while(p.state()==QProcess::Starting || p.state() == QProcess::Running){
      p.waitForFinished(200);
      QCoreApplication::processEvents();
    }
    QString tmp = p.readAllStandardOutput();
-   return tmp.split("\n", QString::SkipEmptyParts);	   
+   return tmp.split("\n", QString::SkipEmptyParts);
 }
 
 bool MainWindow::checkSudoCache(){
