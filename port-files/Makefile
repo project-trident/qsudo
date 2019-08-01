@@ -4,7 +4,7 @@ PORTNAME=	qsudo
 PORTVERSION=	%%CHGVERSION%%
 CATEGORIES=	sysutils
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	ken@ixsystems.com
 COMMENT=	Qt sudo front-end
 
 LICENSE=	BSD2CLAUSE
@@ -12,14 +12,14 @@ LICENSE_FILE=   ${WRKSRC}/../LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
 
-USES=           qmake
-USE_QT5=        core gui widgets buildtools_build
+USES=           qt:5 qmake
+USE_QT=        core gui widgets buildtools_build
 MAKE_ARGS=      PREFIX=${STAGEDIR}${PREFIX}
 
 QMAKE_ARGS=     CONFIG+="configure"
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	trueos
+GH_ACCOUNT=	project-trident
 GH_PROJECT=	qsudo
 GH_TAGNAME=	%%GHTAG%%
 
