@@ -2,9 +2,10 @@
 #define MAINWIN_H
 
 #include "ui_mainwindow.h"
+#include <QGuiApplication>
 #include <QProcess>
 #include <QSettings>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QPoint>
 #define PREFIX QString("/usr/local")
 
@@ -18,9 +19,9 @@ public:
           setupUi(this);
 	  //Have this always centered on the screen and on top of other windows
 	  this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint );
-	  QPoint center = QApplication::desktop()->availableGeometry().center();
+	  QPoint center = QGuiApplication::screenAt(QCursor::pos())->availableGeometry().center();
 	  //Move from center of widget to top-left corner point
-	  center.setX( center.x() - (this->width()/2) ); 
+	  center.setX( center.x() - (this->width()/2) );
 	  center.setY( center.y() - (this->height()/2) );
 	  this->move(center);
         }
@@ -54,4 +55,3 @@ signals:
 
 } ;
 #endif // MAINWIN_H
-

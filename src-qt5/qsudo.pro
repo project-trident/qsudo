@@ -1,15 +1,7 @@
-#-------------------------------------------------
-#
-# QSUDO
-# License: BSD
-# Author: Kris Moore
-#
-#-------------------------------------------------
-
 QT       += core gui widgets
 
 TARGET = qsudo
-target.path = /usr/local/bin/
+target.path = $${DESTDIR}/usr/bin/
 TEMPLATE = app
 
 LIBS += -L/usr/local/lib
