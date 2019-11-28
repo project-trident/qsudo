@@ -1,0 +1,19 @@
+# Template file for 'qsudo'
+pkgname=qsudo
+version=2019.10.12
+revision=1
+short_desc="Graphical sudo utility from Project Trident"
+tags="trident sudo kdesu gksu"
+maintainer="Ken Moore <ken@project-trident.org>"
+license="BSD-2-Clause"
+homepage="https://github.com/project-trident/qsudo"
+distfiles="https://github.com/project-trident/qsudo/archive/v${version}.tar.gz"
+checksum=""
+
+build_helper="qmake"
+build_wrksrc="src-qt5"
+depends="sudo"
+
+do_install() {
+	vlicense LICENSE
+}
