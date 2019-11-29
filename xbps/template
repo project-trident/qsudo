@@ -20,5 +20,5 @@ if [ -n "$CROSS_BUILD" ]; then
 fi
 
 post_install() {
-	vlicense LICENSE
+	vlicense ../LICENSE
 }
