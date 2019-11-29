@@ -1,19 +1,24 @@
 # Template file for 'qsudo'
 pkgname=qsudo
-version=2019.10.12
+version=2019.11.29
 revision=1
+build_wrksrc="src-qt5"
+build_style=qmake
+hostmakedepends="qt5-host-tools"
+makedepends="qt5-devel"
+depends="qt5 sudo"
 short_desc="Graphical sudo utility from Project Trident"
-tags="trident sudo kdesu gksu"
 maintainer="Ken Moore <ken@project-trident.org>"
 license="BSD-2-Clause"
 homepage="https://github.com/project-trident/qsudo"
 distfiles="https://github.com/project-trident/qsudo/archive/v${version}.tar.gz"
-checksum=""
+checksum="0768f4dcc59dadb63b1803f6896b59d78f606224e223d2004ca5cba663a1c17b"
+tags="trident sudo kdesu gksu"
 
-build_helper="qmake"
-build_wrksrc="src-qt5"
-depends="sudo"
+if [ -n "$CROSS_BUILD" ]; then
+	hostmakedepends+=" qt5-tools-devel"
+fi
 
-do_install() {
+post_install() {
 	vlicense LICENSE
 }
