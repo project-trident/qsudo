@@ -22,7 +22,11 @@ int main(int argc, char *argv[])
     }
     //Test that the user needs to provide a password first
     QStringList args; for(int i=1; i<argc; i++){ args << argv[i]; }
-    int ret = QProcess::execute("sudo", QStringList() << "-n" << "-S"  << args);
+    QProcess P;
+    P.setProcessEnvironment(QProcessEnvironment::systemEnvironment());
+    P.start("sudo", QStringList() << "-n" << args);
+    P.waitForFinished();
+    int ret = P.exitCode(); //QProcess::execute("sudo", QStringList() << "-n" << args);
     if(ret==0){ return 0; } //all finished. No password needed
 
     QTranslator translator;

@@ -96,6 +96,7 @@ void MainWindow::testPass()
   arguments << "true";
 
   QProcess *tP = new QProcess(this);
+  tP->setProcessEnvironment(QProcessEnvironment::systemEnvironment());
   tP->setProcessChannelMode(QProcess::MergedChannels);
   tP->start(program, arguments);
   tP->write(passwordLineEdit->text().toLatin1() + "\n");
@@ -135,6 +136,7 @@ void MainWindow::startSudo()
     arguments << qApp->argv()[i];*/
 
   sudoProc = new QProcess(this);
+  sudoProc->setProcessEnvironment(QProcessEnvironment::systemEnvironment());
   sudoProc->start(program, arguments);
   sudoProc->write(passwordLineEdit->text().toLocal8Bit() + "\n");
   connect( sudoProc, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotProcDone() ) );
